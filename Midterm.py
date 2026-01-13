@@ -25,7 +25,18 @@ def hollow_right_triangle(n):
 
 # Q3: Inverted Pyramid
 def inverted_pyramid(n):
-    return ""
+    if n < 3:
+        return "The pyramid height should be at least 3."
+    
+    result = ""
+    for i in range(n):
+        for j in range(i):
+            result += " "
+        for k in range((n - 1) * 2 + 1 - 2 * i):
+            result += "*"
+        result += "\n"
+
+    return result.rstrip()
 
 # ----------------------------------------------------------------
 print(area_of_circle(5))
